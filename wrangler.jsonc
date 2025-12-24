@@ -7,7 +7,8 @@
 	"name": "used-car-market",
 	"compatibility_date": "2025-12-23",
 	"compatibility_flags": [
-		"nodejs_als"
+		"nodejs_als",
+		"nodejs_compat"
 	],
 	"pages_build_output_dir": ".svelte-kit/cloudflare",
 	"observability": {
@@ -21,7 +22,7 @@
 		}
 	],
 	"env": {
-		"staging": {
+		"stg": {
 			"d1_databases": [
 				{
 					"binding": "DB",
@@ -30,7 +31,7 @@
 				}
 			]
 		},
-		"production": {
+		"prod": {
 			"d1_databases": [
 				{
 					"binding": "DB",
@@ -38,7 +39,7 @@
 					"database_id": "34ccc10a-4977-4358-8f0e-19e720e25575"
 				}
 			]
-		},
+		}
 	},
 	/**
 	 * Smart Placement

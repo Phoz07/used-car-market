@@ -13,7 +13,8 @@
 		"deploy": "pnpm run build && wrangler pages deploy",
 		"cf-typegen": "wrangler types src/worker-configuration.d.ts",
 		"db:generate": "drizzle-kit generate",
-		"db:migrate": "drizzle-kit migrate",
+		"db:migrate:prod": "wrangler d1 execute DB --remote --env prod",
+		"db:migrate:stg": "wrangler d1 execute DB --remote --env stg",
 		"db:migrate:local": "wrangler d1 execute DB --local",
 		"db:drop": "drizzle-kit drop"
 	},
