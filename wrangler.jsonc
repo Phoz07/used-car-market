@@ -12,7 +12,34 @@
 	"pages_build_output_dir": ".svelte-kit/cloudflare",
 	"observability": {
 		"enabled": true
-	}
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "stg-used-car-database",
+			"database_id": "a9ca0b7f-8be0-4622-9a18-5cbfb0df1caf"
+		}
+	],
+	"env": {
+		"staging": {
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "stg-used-car-database",
+					"database_id": "a9ca0b7f-8be0-4622-9a18-5cbfb0df1caf"
+				}
+			]
+		},
+		"production": {
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "prod-used-car-database",
+					"database_id": "34ccc10a-4977-4358-8f0e-19e720e25575"
+				}
+			]
+		},
+	},
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
