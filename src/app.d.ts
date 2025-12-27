@@ -1,17 +1,22 @@
-// See https://svelte.dev/docs/kit/types#app.d.ts
-// for information about these interfaces
-import type { D1Database } from '@cloudflare/workers-types'
+import type { BetterAuth } from '$lib/server/auth';
+import type { DrizzleClient } from '$lib/server/db';
 
 declare global {
-	namespace App {
-        interface Platform {
-            env: {
-                DB: D1Database
-            }
-            cf: CfProperties
-            ctx: ExecutionContext
-        }
+  namespace App {
+    interface Platform {
+      env: {
+        DB: D1Database;
+      };
+      cf: CfProperties;
+      ctx: ExecutionContext;
     }
+    
+    interface Locals {
+      db: DrizzleClient;
+      auth: BetterAuth;
+      user: any;
+    }
+  }
 }
 
 export {};
